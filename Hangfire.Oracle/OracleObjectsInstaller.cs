@@ -26,10 +26,10 @@ namespace Hangfire.Oracle.Core
 
             var script = GetStringResource("Hangfire.Oracle.Core.Install.sql");
 
-            // TODO: Still problems on script run
-            connection.Execute(script);
+            var sqlCommands = sql.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            sqlCommands.ToList().ForEach(s => _oracleConnection.Execute(s));
 
-            Log.Info("Hangfire SQL objects installed.");
+    Log.Info("Hangfire SQL objects installed.");
         }
 
         private static bool TablesExists(IDbConnection connection, string schemaName)
