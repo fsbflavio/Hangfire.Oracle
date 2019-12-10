@@ -26,7 +26,7 @@ namespace Hangfire.Oracle.Core
 
             var script = GetStringResource("Hangfire.Oracle.Core.Install.sql");
 
-            var sqlCommands = sql.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            var sqlCommands = script.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             sqlCommands.ToList().ForEach(s => _oracleConnection.Execute(s));
 
     Log.Info("Hangfire SQL objects installed.");
