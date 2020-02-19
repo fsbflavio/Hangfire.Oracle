@@ -35,12 +35,24 @@ namespace Hangfire.Oracle.Core
 
         private static bool TablesExists(IDbConnection connection, string schemaName)
         {
-            return connection.ExecuteScalar<string>($@"
-   SELECT TABLE_NAME
-     FROM all_tables
-    WHERE OWNER = '{schemaName}' AND TABLE_NAME LIKE 'HF_%'
- ORDER BY TABLE_NAME
-") != null;
+            string tableExistsQuery;
+
+            if (!string.IsNullOrEmpty(schemaName))
+            {
+                tableExistsQuery = $@"SELECT TABLE_NAME
+FROM all_tables
+WHERE OWNER = '{schemaName}' AND TABLE_NAME LIKE 'HF_%'
+ORDER BY TABLE_NAME";
+            }
+            else
+            {
+                tableExistsQuery = @"SELECT TABLE_NAME
+FROM all_tables
+WHERE TABLE_NAME LIKE 'HF_%'
+ORDER BY TABLE_NAME";
+            }
+
+            return connection.ExecuteScalar<string>(tableExistsQuery) != null;
         }
 
         private static string GetStringResource(string resourceName)
