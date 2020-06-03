@@ -40,8 +40,6 @@ namespace Hangfire.Oracle.Core
                 throw new ArgumentNullException(nameof(connectionString));
             }
 
-            _options = options ?? throw new ArgumentNullException(nameof(options));
-
             if (IsConnectionString(connectionString))
             {
                 _connectionString = connectionString;
@@ -51,6 +49,24 @@ namespace Hangfire.Oracle.Core
                 throw new ArgumentException($"Could not find connection string with name '{connectionString}' in application config file");
             }
 
+            _options = options ?? throw new ArgumentNullException(nameof(options));
+            PrepareSchemaIfNecessary(options);
+
+            InitializeQueueProviders();
+        }       
+     
+        public OracleStorage(Func<IDbConnection> connectionFactory, OracleStorageOptions options)
+        {
+            _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
+
+            _options = options ?? throw new ArgumentNullException(nameof(options));
+            PrepareSchemaIfNecessary(options);
+
+            InitializeQueueProviders();
+        }
+
+        private void PrepareSchemaIfNecessary(OracleStorageOptions options)
+        {
             if (options.PrepareSchemaIfNecessary)
             {
                 using (var connection = CreateAndOpenConnection())
@@ -58,16 +74,6 @@ namespace Hangfire.Oracle.Core
                     OracleObjectsInstaller.Install(connection, options.SchemaName);
                 }
             }
-
-            InitializeQueueProviders();
-        }
-
-        public OracleStorage(Func<IDbConnection> connectionFactory, OracleStorageOptions options)
-        {
-            _connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
-            _options = options;
-
-            InitializeQueueProviders();
         }
 
         private void InitializeQueueProviders()
