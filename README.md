@@ -24,12 +24,12 @@ Install-Package Hangfire.Oracle.Core
 
 Use one the following ways to initialize `OracleStorage`: 
 - Create new instance of `OracleStorage` with connection string constructor parameter and pass it to `Configuration` with `UseStorage` method:
-```
+```csharp
   GlobalConfiguration.Configuration.UseStorage(
     new OracleStorage(connectionString));
 ```
 - Alternatively one or more options can be passed as a parameter to `OracleStorage`:
-```
+```csharp
 GlobalConfiguration.Configuration.UseStorage(
     new OracleStorage(
         connectionString, 
@@ -46,7 +46,7 @@ GlobalConfiguration.Configuration.UseStorage(
         }));
 ```
 - With version 1.1 you can provide your own connection factory.
-```
+```csharp
 GlobalConfiguration.Configuration.UseStorage(
     new OracleStorage(
         () => new OracleConnection(connectionString), 
@@ -68,7 +68,7 @@ Description of optional parameters:
 ### How to limit number of open connections
 
 Number of opened connections depends on Hangfire worker count. You can limit worker count by setting `WorkerCount` property value in `BackgroundJobServerOptions`:
-```
+```csharp
 app.UseHangfireServer(
    new BackgroundJobServerOptions
    {
