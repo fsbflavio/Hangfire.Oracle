@@ -2,7 +2,7 @@
 
 using Dapper;
 
-namespace Hangfire.Oracle.Core.Entities
+namespace Hangfire.Oracle.Entities
 {
     public static class EntityUtils
     {

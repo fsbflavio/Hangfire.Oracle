@@ -12,8 +12,8 @@
 		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
 		<Version>1.8.4</Version>
 		<AssemblyVersion>1.8.4.0</AssemblyVersion>
-		<AssemblyName>Hangfire.Oracle.Core</AssemblyName>
-		<RootNamespace>Hangfire.Oracle.Core</RootNamespace>
+		<AssemblyName>Hangfire.Oracle</AssemblyName>
+		<RootNamespace>Hangfire.Oracle</RootNamespace>
 		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
 		<PackageVersion>1.8.4</PackageVersion>
 	</PropertyGroup>

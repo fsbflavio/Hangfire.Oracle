@@ -8,7 +8,7 @@ using Dapper;
 
 using Hangfire.Logging;
 
-namespace Hangfire.Oracle.Core
+namespace Hangfire.Oracle
 {
     public static class OracleObjectsInstaller
     {

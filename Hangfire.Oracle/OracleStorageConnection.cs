@@ -8,11 +8,11 @@ using Dapper;
 
 using Hangfire.Common;
 using Hangfire.Logging;
-using Hangfire.Oracle.Core.Entities;
+using Hangfire.Oracle.Entities;
 using Hangfire.Server;
 using Hangfire.Storage;
 
-namespace Hangfire.Oracle.Core
+namespace Hangfire.Oracle
 {
     public class OracleStorageConnection : JobStorageConnection
     {
