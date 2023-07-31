@@ -1,8 +1,15 @@
 # Hangfire.Oracle.Core Implementation
+This repo is an implementation for Hangfire for Oracle.
 
-Hangfire.Oracle.Core is based on Hangfire.MySqlStorage(https://github.com/arnoldasgudas/Hangfire.MySqlStorage)
+The idea is to keep it updated with [Microsoft life cycle](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework)
 
-I fixed some bugs and support .net standard 2.0.
+Hangfire.Oracle is a fork from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core). I tried to contact the repository owner but it seems that the repository Hangfire.Oracle.Core is no longer been maintain, so I start a new one here to get updated.
+
+If you want to help to maintain this repo, feel free to create a Pull request.
+
+Main Changes:
+Upgrade all the Packages.
+Add support for .net 6.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
 [![Latest version](https://img.shields.io/nuget/v/Hangfire.Oracle.Core.svg)](https://www.nuget.org/packages/Hangfire.Oracle.Core/) 
