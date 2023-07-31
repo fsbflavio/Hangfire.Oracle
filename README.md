@@ -7,8 +7,9 @@ Hangfire.Oracle is a fork from [Hangfire.Oracle.Core](https://github.com/akoylu/
 
 If you want to help to maintain this repo, feel free to create a Pull request.
 
-Main Changes:
-Upgrade all the Packages.
+Main Changes:  
+Remove Dapper.Oracle dependency.
+Upgrade all the Packages.  
 Add support for .net 6.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
