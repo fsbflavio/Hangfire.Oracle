@@ -1,41 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Title>Hangfire.Oracle.Core</Title>
-    <Summary>Hangfire's Oracle storage</Summary>
-    <Description>Hangfire's Oracle storage.</Description>
-    <PackageId>Hangfire.Oracle.Core</PackageId>
-    <Product>Hangfire.Oracle.Core</Product>
-    <Company>akoylu</Company>
-    <Authors>akoylu</Authors>
-    <Owners>Ahmet Köylü</Owners>
-    <PackageLicenseUrl>https://github.com/akoylu/Hangfire.Oracle.Core/blob/master/License.md</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/akoylu/Hangfire.Oracle.Core</PackageProjectUrl>
-    <Copyright>Copyright 2020</Copyright>
-    <PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
-    <Version>1.3.0</Version>
-    <AssemblyVersion>1.3.0.0</AssemblyVersion>
-    <AssemblyName>Hangfire.Oracle.Core</AssemblyName>
-    <RootNamespace>Hangfire.Oracle.Core</RootNamespace>
-    <PackageReleaseNotes>Fix missing prefix in merge query</PackageReleaseNotes>
-    <PackageVersion>1.3.1</PackageVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Install.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Install.sql" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48;net6.0</TargetFrameworks>
+		<Title>Hangfire.Oracle</Title>
+		<Summary>Hangfire's Oracle storage</Summary>
+		<Description>Hangfire's Oracle storage.</Description>
+		<PackageId>Hangfire.Oracle</PackageId>
+		<Product>Hangfire.Oracle</Product>
+		<PackageLicenseUrl>https://github.com/akoylu/Hangfire.Oracle.Core/blob/master/License.md</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/akoylu/Hangfire.Oracle.Core</PackageProjectUrl>
+		<Copyright>Copyright 2023</Copyright>
+		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
+		<Version>1.8.4</Version>
+		<AssemblyVersion>1.8.4.0</AssemblyVersion>
+		<AssemblyName>Hangfire.Oracle.Core</AssemblyName>
+		<RootNamespace>Hangfire.Oracle.Core</RootNamespace>
+		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
+		<PackageVersion>1.8.4</PackageVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Install.sql" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Install.sql" />
+	</ItemGroup>
+	
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.110" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Dapper" Version="1.60.6" />
-    <PackageReference Include="Hangfire.Core" Version="1.7.0" />
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.6" />
-  </ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+		<PackageReference Include="Oracle.ManagedDataAccess" Version="21.11.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Dapper" Version="2.0.143" />
+		<PackageReference Include="Hangfire.Core" Version="1.8.4" />
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.200" />
+	</ItemGroup>
 </Project>
