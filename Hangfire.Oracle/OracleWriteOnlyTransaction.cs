@@ -4,13 +4,13 @@ using System.Data;
 using System.Linq;
 
 using Dapper;
-using Dapper.Oracle;
 
 using Hangfire.Common;
 using Hangfire.Logging;
 using Hangfire.Oracle.Core.Entities;
 using Hangfire.States;
 using Hangfire.Storage;
+using Oracle.ManagedDataAccess.Client;
 
 namespace Hangfire.Oracle.Core
 {
@@ -57,7 +57,7 @@ namespace Hangfire.Oracle.Core
 
             var stateId = _storage.UseConnection(connection => connection.GetNextId());
 
-            var oracleDynamicParameters = new OracleDynamicParameters();
+            var oracleDynamicParameters = new DynamicParameters();
             oracleDynamicParameters.AddDynamicParams(new
             {
                 STATE_ID = stateId,
@@ -67,7 +67,7 @@ namespace Hangfire.Oracle.Core
                 CREATED_AT = DateTime.UtcNow,
                 ID = jobId
             });
-            oracleDynamicParameters.Add("DATA", SerializationHelper.Serialize(state.SerializeData(), SerializationOption.User), OracleMappingType.NClob, ParameterDirection.Input);
+            oracleDynamicParameters.Add("DATA", SerializationHelper.Serialize(state.SerializeData(), SerializationOption.User),DbType.String, ParameterDirection.Input);
 
             QueueCommand(x => x.Execute(
                 @"
@@ -87,7 +87,7 @@ END;
 
             AcquireStateLock();
 
-            var oracleDynamicParameters = new OracleDynamicParameters();
+            var oracleDynamicParameters = new DynamicParameters();
             oracleDynamicParameters.AddDynamicParams(new
             {
                 JOB_ID = jobId,
@@ -95,7 +95,7 @@ END;
                 REASON = state.Reason,
                 CREATED_AT = DateTime.UtcNow
             });
-            oracleDynamicParameters.Add("DATA", SerializationHelper.Serialize(state.SerializeData(), SerializationOption.User), OracleMappingType.NClob, ParameterDirection.Input);
+            oracleDynamicParameters.Add("DATA", SerializationHelper.Serialize(state.SerializeData(), SerializationOption.User), DbType.String, ParameterDirection.Input);
 
             QueueCommand(x => x.Execute(
                 " INSERT INTO HF_JOB_STATE (ID, JOB_ID, NAME, REASON, CREATED_AT, DATA) " +
@@ -225,9 +225,9 @@ END;
 
             AcquireListLock();
 
-            var oracleDynamicParameters = new OracleDynamicParameters();
+            var oracleDynamicParameters = new DynamicParameters();
             oracleDynamicParameters.Add("KEY", key);
-            oracleDynamicParameters.Add("VALUE", value, OracleMappingType.NClob, ParameterDirection.Input);
+            oracleDynamicParameters.Add("VALUE", value, DbType.String, ParameterDirection.Input);
 
             QueueCommand(x => x.Execute("INSERT INTO HF_LIST (ID, KEY, VALUE) VALUES (HF_SEQUENCE.NEXTVAL, :KEY, :VALUE)", oracleDynamicParameters));
         }

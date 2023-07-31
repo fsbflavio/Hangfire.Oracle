@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading;
 
 using Dapper;
-using Dapper.Oracle;
 
 using Hangfire.Common;
 using Hangfire.Logging;
@@ -57,15 +56,15 @@ namespace Hangfire.Oracle.Core
             {
                 var jobId = connection.GetNextJobId();
 
-                var oracleDynamicParameters = new OracleDynamicParameters();
+                var oracleDynamicParameters = new DynamicParameters();
                 oracleDynamicParameters.AddDynamicParams(new
                 {
                     ID = jobId,
                     CREATED_AT = createdAt,
                     EXPIRE_AT = createdAt.Add(expireIn)
                 });
-                oracleDynamicParameters.Add("INVOCATION_DATA", SerializationHelper.Serialize(invocationData, SerializationOption.User), OracleMappingType.NClob, ParameterDirection.Input);
-                oracleDynamicParameters.Add("ARGUMENTS", arguments.Arguments, OracleMappingType.NClob, ParameterDirection.Input);
+                oracleDynamicParameters.Add("INVOCATION_DATA", SerializationHelper.Serialize(invocationData, SerializationOption.User), DbType.String, ParameterDirection.Input);
+                oracleDynamicParameters.Add("ARGUMENTS", arguments.Arguments, DbType.String, ParameterDirection.Input);
 
                 connection.Execute(
                     @" 
@@ -80,13 +79,13 @@ namespace Hangfire.Oracle.Core
                     var parameterIndex = 0;
                     foreach (var parameter in parameters)
                     {
-                        var dynamicParameters = new OracleDynamicParameters();
+                        var dynamicParameters = new DynamicParameters();
                         dynamicParameters.AddDynamicParams(new
                         {
                             JOB_ID = jobId,
                             NAME = parameter.Key
                         });
-                        dynamicParameters.Add("VALUE", parameter.Value, OracleMappingType.NClob, ParameterDirection.Input);
+                        dynamicParameters.Add("VALUE", parameter.Value, DbType.String, ParameterDirection.Input);
 
                         parameterArray[parameterIndex++] = dynamicParameters;
                     }
@@ -134,9 +133,9 @@ namespace Hangfire.Oracle.Core
 
             _storage.UseConnection(connection =>
             {
-                var oracleDynamicParameters = new OracleDynamicParameters();
+                var oracleDynamicParameters = new DynamicParameters();
                 oracleDynamicParameters.AddDynamicParams(new { JOB_ID = id, NAME = name });
-                oracleDynamicParameters.Add("VALUE", value, OracleMappingType.NClob, ParameterDirection.Input);
+                oracleDynamicParameters.Add("VALUE", value, DbType.String, ParameterDirection.Input);
                 connection.Execute(
                     @" 
  MERGE INTO HF_JOB_PARAMETER JP
@@ -582,9 +581,9 @@ SELECT VALUE as Value
             {
                 foreach (var keyValuePair in keyValuePairs)
                 {
-                    var oracleDynamicParameters = new OracleDynamicParameters();
+                    var oracleDynamicParameters = new DynamicParameters();
                     oracleDynamicParameters.AddDynamicParams(new { KEY = key, FIELD = keyValuePair.Key });
-                    oracleDynamicParameters.Add("VALUE", keyValuePair.Value, OracleMappingType.NClob, ParameterDirection.Input);
+                    oracleDynamicParameters.Add("VALUE", keyValuePair.Value, DbType.String, ParameterDirection.Input);
 
                     connection.Execute(
                         @"
