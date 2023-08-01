@@ -17,7 +17,7 @@
 		<AssemblyName>Hangfire.Oracle</AssemblyName>
 		<RootNamespace>Hangfire.Oracle</RootNamespace>
 		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
-		<PackageVersion>1.8.4.0</PackageVersion>
+		<PackageVersion>1.8.4.1</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Install.sql" />
@@ -35,10 +35,10 @@
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
 		<PackageReference Include="Oracle.ManagedDataAccess" Version="21.11.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="Dapper" Version="2.0.143" />
 		<PackageReference Include="Hangfire.Core" Version="1.8.4" />
 	</ItemGroup>
