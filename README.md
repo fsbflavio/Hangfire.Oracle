@@ -1,6 +1,8 @@
 # Hangfire.Oracle - Oracle Storage for Hangfire Background Jobs
 This repository contains an Oracle implementation of Hangfire for running fire-and-forget, delayed and recurring background jobs in .NET.
 
+It supports both .NET Core and .NET Framework applications.
+
 Hangfire.Oracle.Core was originally forked from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core), which is no longer maintained. This project aims to provide an up-to-date Oracle storage option for Hangfire with support for recent .NET versions.
 
 Changes include:
@@ -9,7 +11,7 @@ Changes include:
 - Added support for .NET 6.0
 - General maintenance and improvements
 
-Hangfire.Oracle.Core keeps parity with the main Hangfire project as much as possible.
+Hangfire.Oracle keeps parity with the main Hangfire project as much as possible.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
 [![Latest version](https://img.shields.io/nuget/v/Th.Hangfire.Oracle.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.4)
