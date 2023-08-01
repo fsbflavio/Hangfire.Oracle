@@ -1,4 +1,4 @@
-﻿namespace Hangfire.Oracle.JobQueue
+﻿namespace TH.Hangfire.Oracle.JobQueue
 {
     public interface IPersistentJobQueueProvider
     {

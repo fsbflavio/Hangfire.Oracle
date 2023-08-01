@@ -1,4 +1,4 @@
-﻿namespace Hangfire.Oracle.Entities
+﻿namespace TH.Hangfire.Oracle.Entities
 {
     internal class JobParameter
     {

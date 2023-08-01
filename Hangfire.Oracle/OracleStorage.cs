@@ -8,14 +8,15 @@ using Dapper;
 
 using Hangfire.Annotations;
 using Hangfire.Logging;
-using Hangfire.Oracle.JobQueue;
-using Hangfire.Oracle.Monitoring;
+using TH.Hangfire.Oracle.JobQueue;
+using TH.Hangfire.Oracle.Monitoring;
 using Hangfire.Server;
 using Hangfire.Storage;
 
 using Oracle.ManagedDataAccess.Client;
+using Hangfire;
 
-namespace Hangfire.Oracle
+namespace TH.Hangfire.Oracle
 {
     public class OracleStorage : JobStorage, IDisposable
     {

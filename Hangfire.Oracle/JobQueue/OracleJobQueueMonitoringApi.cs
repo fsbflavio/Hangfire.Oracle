@@ -4,7 +4,7 @@ using System.Linq;
 
 using Dapper;
 
-namespace Hangfire.Oracle.JobQueue
+namespace TH.Hangfire.Oracle.JobQueue
 {
     internal class OracleJobQueueMonitoringApi : IPersistentJobQueueMonitoringApi
     {

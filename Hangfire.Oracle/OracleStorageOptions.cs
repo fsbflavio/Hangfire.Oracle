@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace Hangfire.Oracle
+namespace TH.Hangfire.Oracle
 {
     public class OracleStorageOptions
     {

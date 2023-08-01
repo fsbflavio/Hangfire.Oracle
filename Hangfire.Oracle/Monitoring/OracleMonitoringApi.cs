@@ -7,13 +7,13 @@ using Dapper;
 
 using Hangfire.Annotations;
 using Hangfire.Common;
-using Hangfire.Oracle.Entities;
-using Hangfire.Oracle.JobQueue;
+using TH.Hangfire.Oracle.Entities;
+using TH.Hangfire.Oracle.JobQueue;
 using Hangfire.States;
 using Hangfire.Storage;
 using Hangfire.Storage.Monitoring;
 
-namespace Hangfire.Oracle.Monitoring
+namespace TH.Hangfire.Oracle.Monitoring
 {
     internal class OracleMonitoringApi : IMonitoringApi
     {

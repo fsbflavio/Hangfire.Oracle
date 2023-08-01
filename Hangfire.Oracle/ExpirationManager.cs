@@ -8,7 +8,7 @@ using Dapper;
 using Hangfire.Logging;
 using Hangfire.Server;
 
-namespace Hangfire.Oracle
+namespace TH.Hangfire.Oracle
 {
 #pragma warning disable 618
     internal class ExpirationManager : IServerComponent

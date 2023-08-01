@@ -1,6 +1,6 @@
 using System;
 
-namespace Hangfire.Oracle.Entities
+namespace TH.Hangfire.Oracle.Entities
 {
     internal class Server
     {
