@@ -25,7 +25,7 @@ Install Oracle
 Run the following command in the NuGet Package Manager console to install Hangfire.Oracle.Core:
 
 ```
-Install-Package Hangfire.Oracle.Core
+Install-Package TH.Hangfire.Oracle
 ```
 
 ## Usage
