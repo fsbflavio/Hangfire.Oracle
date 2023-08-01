@@ -115,7 +115,7 @@ namespace TH.Hangfire.Oracle
 
             if (string.IsNullOrWhiteSpace(connectionString))
             {
-                _string = "Hangfire.Oracle.Core";
+                _string = "Oracle";
                 return _string;
             }
 
@@ -137,7 +137,7 @@ namespace TH.Hangfire.Oracle
                     }
                 }
 
-                _string = $"Hangfire.Oracle.Core: {builder}";
+                _string = $"Oracle: {builder}";
                 return _string;
             }
             catch (Exception ex)
