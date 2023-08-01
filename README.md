@@ -13,7 +13,6 @@ Changes include:
 
 Hangfire.Oracle keeps parity with the main Hangfire project as much as possible.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
 [![Latest version](https://img.shields.io/nuget/v/Th.Hangfire.Oracle.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.4)
 
 Oracle storage implementation of [Hangfire](http://hangfire.io/) - fire-and-forget, delayed and recurring tasks runner for .NET. Scalable and reliable background job runner. Supports multiple servers, CPU and I/O intensive, long-running and short-running jobs.
@@ -87,11 +86,12 @@ app.UseHangfireServer(
       WorkerCount = 1
    });
 ```
+
 More info: http://hangfire.io/features.html#concurrency-level-control
 
 ## Dashboard
 Hangfire provides a dashboard
-![Dashboard](https://camo.githubusercontent.com/f263ab4060a09e4375cc4197fb5bfe2afcacfc20/687474703a2f2f68616e67666972652e696f2f696d672f75692f64617368626f6172642d736d2e706e67)
+![Dashboard](https://camo.githubusercontent.com/f263ab4060a09e4375cc4197fb5bfe2afcacfc20/687474703a2f2f68616e67666972652e696f2f696d672f75692f64617368626f6172642d736d2e706e67)  
 More info: [Hangfire Overview](http://hangfire.io/overview.html#integrated-monitoring-ui)
 
 ## Build
