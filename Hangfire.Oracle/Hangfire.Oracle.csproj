@@ -4,10 +4,12 @@
 		<Title>Hangfire.Oracle</Title>
 		<Summary>Hangfire's Oracle storage</Summary>
 		<Description>Hangfire's Oracle storage.</Description>
-		<PackageId>Hangfire.Oracle</PackageId>
-		<Product>Hangfire.Oracle</Product>
-		<PackageLicenseUrl>https://github.com/akoylu/Hangfire.Oracle.Core/blob/master/License.md</PackageLicenseUrl>
-		<PackageProjectUrl>https://github.com/akoylu/Hangfire.Oracle.Core</PackageProjectUrl>
+		<PackageId>TH.Hangfire.Oracle</PackageId>
+		<Product>TH.Hangfire.Oracle</Product>
+		<PackageLicenseExpression>GPL-2.0-only</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/fsbflavio/Hangfire.Oracle</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/fsbflavio/Hangfire.Oracle</RepositoryUrl>
 		<Copyright>Copyright 2023</Copyright>
 		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
 		<Version>1.8.4</Version>
@@ -15,7 +17,7 @@
 		<AssemblyName>Hangfire.Oracle</AssemblyName>
 		<RootNamespace>Hangfire.Oracle</RootNamespace>
 		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
-		<PackageVersion>1.8.4</PackageVersion>
+		<PackageVersion>1.8.4.0</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Install.sql" />
@@ -23,7 +25,10 @@
 	<ItemGroup>
 		<EmbeddedResource Include="Install.sql" />
 	</ItemGroup>
-	
+	<ItemGroup>
+		<None Include="nuget\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
 		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.110" />
 	</ItemGroup>
@@ -36,6 +41,5 @@
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 		<PackageReference Include="Dapper" Version="2.0.143" />
 		<PackageReference Include="Hangfire.Core" Version="1.8.4" />
-		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.200" />
 	</ItemGroup>
 </Project>
