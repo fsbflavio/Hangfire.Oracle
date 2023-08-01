@@ -27,6 +27,9 @@ Run the following command in the NuGet Package Manager console to install Hangfi
 Install-Package TH.Hangfire.Oracle
 ```
 
+## Contributing
+If you are interested in contributing, please open a pull request! All improvements are appreciated.
+
 ## Usage
 
 Use one the following ways to initialize `OracleStorage`: 
