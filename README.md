@@ -3,7 +3,7 @@ This repository contains an Oracle implementation of Hangfire for running fire-a
 
 It **supports both .NET Core and .NET Framework** applications.
 
-Hangfire.Oracle.Core was originally forked from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core), which is no longer maintained. This project aims to provide an up-to-date Oracle storage option for Hangfire with support for recent .NET versions.
+Hangfire.Oracle was originally forked from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core), which is no longer maintained. This project aims to provide an up-to-date Oracle storage option for Hangfire with support for recent .NET versions.
 
 Changes include:
 - Removed Dapper.Oracle dependency
