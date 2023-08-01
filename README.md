@@ -13,7 +13,7 @@ Upgrade all the Packages.
 Add support for .net 6.0.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
-[![Latest version](https://img.shields.io/nuget/v/Hangfire.Oracle.Core.svg)](https://www.nuget.org/packages/Hangfire.Oracle.Core/) 
+[![Latest version](https://img.shields.io/nuget/v/Hangfire.Oracle.Core.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.4)
 
 Oracle storage implementation of [Hangfire](http://hangfire.io/) - fire-and-forget, delayed and recurring tasks runner for .NET. Scalable and reliable background job runner. Supports multiple servers, CPU and I/O intensive, long-running and short-running jobs.
 
@@ -25,7 +25,7 @@ Install Oracle
 Run the following command in the NuGet Package Manager console to install Hangfire.Oracle.Core:
 
 ```
-Install-Package Hangfire.Oracle.Core
+Install-Package TH.Hangfire.Oracle
 ```
 
 ## Usage
