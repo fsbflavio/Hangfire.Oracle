@@ -1,19 +1,18 @@
-# Hangfire.Oracle.Core Implementation
-This repo is an implementation for Hangfire for Oracle.
+# Hangfire.Oracle - Oracle Storage for Hangfire Background Jobs
+This repository contains an Oracle implementation of Hangfire for running fire-and-forget, delayed and recurring background jobs in .NET.
 
-The idea is to keep it updated with [Microsoft life cycle](https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet-framework)
+Hangfire.Oracle.Core was originally forked from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core), which is no longer maintained. This project aims to provide an up-to-date Oracle storage option for Hangfire with support for recent .NET versions.
 
-Hangfire.Oracle is a fork from [Hangfire.Oracle.Core](https://github.com/akoylu/Hangfire.Oracle.Core). I tried to contact the repository owner but it seems that the repository Hangfire.Oracle.Core is no longer been maintain, so I start a new one here to get updated.
+Changes include:
+- Removed Dapper.Oracle dependency
+- Upgraded packages
+- Added support for .NET 6.0
+- General maintenance and improvements
 
-If you want to help to maintain this repo, feel free to create a Pull request.
-
-Main Changes:  
-Remove Dapper.Oracle dependency.  
-Upgrade all the Packages.  
-Add support for .net 6.0.
+Hangfire.Oracle.Core keeps parity with the main Hangfire project as much as possible.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fuhr415en9uu89h7?svg=true)](https://ci.appveyor.com/project/AhmetKoylu/hangfire-oracle-core)
-[![Latest version](https://img.shields.io/nuget/v/Hangfire.Oracle.Core.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.4)
+[![Latest version](https://img.shields.io/nuget/v/Th.Hangfire.Oracle.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.4)
 
 Oracle storage implementation of [Hangfire](http://hangfire.io/) - fire-and-forget, delayed and recurring tasks runner for .NET. Scalable and reliable background job runner. Supports multiple servers, CPU and I/O intensive, long-running and short-running jobs.
 
