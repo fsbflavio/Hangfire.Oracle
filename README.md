@@ -98,4 +98,4 @@ More info: [Hangfire Overview](http://hangfire.io/overview.html#integrated-monit
 Please use Visual Studio or any other tool of your choice to build the solution.
 
 ## Known Issues
-Currently Install.sql is not deployed if DB objects are not existing. As a workaround run your scripts in database and give give CRUD grants to the user that is given in connection string.
+If the DB User/Schema does not exist, Install.sql is not deployed. As a workaround for this issue, you can create the User/Schema in the database and give CRUD grants to it. When Hangfire runs for the first time, it will create the tables for the User/Schema specified in the connection string.
