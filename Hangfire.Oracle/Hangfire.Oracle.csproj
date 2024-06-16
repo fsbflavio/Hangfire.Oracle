@@ -30,16 +30,16 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.120" />
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.4.0" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
-		<PackageReference Include="Oracle.ManagedDataAccess" Version="21.12.0" />
+		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.4.0" />
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Dapper" Version="2.1.24" />
-		<PackageReference Include="Hangfire.Core" Version="1.8.6" />
+		<PackageReference Include="Dapper" Version="2.1.35" />
+		<PackageReference Include="Hangfire.Core" Version="1.8.14" />
 	</ItemGroup>
 </Project>
