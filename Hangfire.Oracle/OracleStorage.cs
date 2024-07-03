@@ -18,7 +18,7 @@ using Hangfire;
 
 namespace TH.Hangfire.Oracle
 {
-    public class OracleStorage : JobStorage, IDisposable
+    public class OracleStorage : JobStorage
     {
         private static readonly ILog Logger = LogProvider.GetLogger(typeof(OracleStorage));
 
@@ -26,6 +26,12 @@ namespace TH.Hangfire.Oracle
         private readonly string _connectionString;
         private readonly Func<IDbConnection> _connectionFactory;
         private readonly OracleStorageOptions _options;
+
+        private readonly Dictionary<string, bool> _features =
+           new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase)
+           {
+                { JobStorageFeatures.JobQueueProperty, true }
+           };
 
         public virtual PersistentJobQueueProviderCollection QueueProviders { get; private set; }
 
@@ -231,8 +237,15 @@ namespace TH.Hangfire.Oracle
         {
             connection?.Dispose();
         }
-        public void Dispose()
+       
+
+        public override bool HasFeature(string featureId)
         {
+            if (featureId == null) throw new ArgumentNullException(nameof(featureId));
+
+            return _features.TryGetValue(featureId, out var isSupported)
+                ? isSupported
+                : base.HasFeature(featureId);
         }
     }
 }
