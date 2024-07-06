@@ -10,14 +10,14 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/fsbflavio/Hangfire.Oracle</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/fsbflavio/Hangfire.Oracle</RepositoryUrl>
-		<Copyright>Copyright 2023</Copyright>
+		<Copyright>Copyright 2024</Copyright>
 		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
-		<Version>1.8.6</Version>
-		<AssemblyVersion>1.8.6.0</AssemblyVersion>
+		<Version>1.8.14</Version>
+		<AssemblyVersion>1.8.14.0</AssemblyVersion>
 		<AssemblyName>Hangfire.Oracle</AssemblyName>
 		<RootNamespace>Hangfire.Oracle</RootNamespace>
 		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
-		<PackageVersion>1.8.6.0</PackageVersion>
+		<PackageVersion>1.8.14.0</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Install.sql" />
