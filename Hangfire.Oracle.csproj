@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net48;net6.0</TargetFrameworks>
+		<Title>Hangfire.Oracle</Title>
+		<Summary>Hangfire's Oracle storage</Summary>
+		<Description>Hangfire's Oracle storage.</Description>
+		<PackageId>Hangfire.Oracle</PackageId>
+		<Product>Hangfire.Oracle</Product>
+		<PackageLicenseExpression>GPL-2.0-only</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/LicoCode/Hangfire.Oracle</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/LicoCode/Hangfire.Oracle</RepositoryUrl>
+		<Copyright>Copyright 2024</Copyright>
+		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
+		<Version>1.8.14</Version>
+		<AssemblyVersion>1.8.14.0</AssemblyVersion>
+		<AssemblyName>Hangfire.Oracle</AssemblyName>
+		<RootNamespace>Hangfire.Oracle</RootNamespace>
+		<PackageReleaseNotes>Add suporte for .NET 6.0</PackageReleaseNotes>
+		<PackageVersion>1.8.14.0</PackageVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Install.sql" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Install.sql" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="nuget\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.4.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+		<PackageReference Include="Oracle.ManagedDataAccess" Version="23.4.0" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.35" />
+		<PackageReference Include="Hangfire.Core" Version="1.8.14" />
+	</ItemGroup>
+</Project>
