@@ -4,12 +4,12 @@
 		<Title>Hangfire.Oracle</Title>
 		<Summary>Hangfire's Oracle storage</Summary>
 		<Description>Hangfire's Oracle storage.</Description>
-		<PackageId>TH.Hangfire.Oracle</PackageId>
-		<Product>TH.Hangfire.Oracle</Product>
+		<PackageId>Hangfire.Oracle</PackageId>
+		<Product>Hangfire.Oracle</Product>
 		<PackageLicenseExpression>GPL-2.0-only</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageProjectUrl>https://github.com/fsbflavio/Hangfire.Oracle</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/fsbflavio/Hangfire.Oracle</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/LicoCode/Hangfire.Oracle</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/LicoCode/Hangfire.Oracle</RepositoryUrl>
 		<Copyright>Copyright 2024</Copyright>
 		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
 		<Version>1.8.14</Version>
