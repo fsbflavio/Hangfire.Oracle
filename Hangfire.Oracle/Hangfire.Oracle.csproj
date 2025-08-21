@@ -21,8 +21,10 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Install.sql" />
+		<None Remove="InstallIndexes.sql" />
 	</ItemGroup>
 	<ItemGroup>
+		<EmbeddedResource Include="InstallIndexes.sql" />
 		<EmbeddedResource Include="Install.sql" />
 	</ItemGroup>
 	<ItemGroup>
