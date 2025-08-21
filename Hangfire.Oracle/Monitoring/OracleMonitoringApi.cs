@@ -461,12 +461,7 @@ SELECT Id
 
             if (!enumerable.Any())
             {
-                enqueuedJobsSql = @"
- SELECT J.ID AS Id, J.STATE_ID AS StateId, J.STATE_NAME AS StateName, J.INVOCATION_DATA AS InvocationData, J.ARGUMENTS AS Arguments, J.CREATED_AT AS CreatedAt, J.EXPIRE_AT AS ExpireAt, S.REASON AS StateReason, S.DATA AS StateData
-   FROM HF_JOB J
- LEFT JOIN HF_JOB_STATE S 
-     ON S.ID = J.STATE_ID
-";
+                return new JobList<EnqueuedJobDto>(new List<KeyValuePair<string, EnqueuedJobDto>>(0));
             }
 
             var jobs = connection.Query<SqlJob>(enqueuedJobsSql, new { JOB_IDS = enumerable }).ToList();
