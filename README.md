@@ -13,7 +13,7 @@ Changes include:
 
 Hangfire.Oracle keeps parity with the main Hangfire project as much as possible.
 
-[![Latest version](https://img.shields.io/nuget/v/Th.Hangfire.Oracle.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle/1.8.21)
+[![Latest version](https://img.shields.io/nuget/v/Th.Hangfire.Oracle.svg)](https://www.nuget.org/packages/TH.Hangfire.Oracle)
 
 Oracle storage implementation of [Hangfire](http://hangfire.io/) - fire-and-forget, delayed and recurring tasks runner for .NET. Scalable and reliable background job runner. Supports multiple servers, CPU and I/O intensive, long-running and short-running jobs.
 

@@ -10,14 +10,14 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageProjectUrl>https://github.com/fsbflavio/Hangfire.Oracle</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/fsbflavio/Hangfire.Oracle</RepositoryUrl>
-		<Copyright>Copyright 2024</Copyright>
+		<Copyright>Copyright 2025</Copyright>
 		<PackageTags>Hangfire Oracle Hangfire.Oracle Hangfire.Oracle.Core</PackageTags>
 		<Version>1.8.21</Version>
-		<AssemblyVersion>1.8.21.0</AssemblyVersion>
+		<AssemblyVersion>1.8.21.1</AssemblyVersion>
 		<AssemblyName>Hangfire.Oracle</AssemblyName>
 		<RootNamespace>Hangfire.Oracle</RootNamespace>
-		<PackageReleaseNotes>Add suporte for .NET 8.0</PackageReleaseNotes>
-		<PackageVersion>1.8.21.0</PackageVersion>
+		<PackageReleaseNotes>Add indexes for tables</PackageReleaseNotes>
+		<PackageVersion>1.8.21.1</PackageVersion>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Install.sql" />
